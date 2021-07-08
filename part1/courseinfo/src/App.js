@@ -2,21 +2,26 @@ import React from 'react'
 
 const Header = (props) => {
   return (
-    <div>
       <h1>{props.course}</h1>
-    </div>
+  )
+}
+
+const Part = (props) => {
+  return (
+    <p>{props.part} {props.count}</p>
   )
 }
 
 const Content = (props) => {
   return (
     <div>
-      <p>
-        {props.part} {props.count}
-      </p>
+      <Part part={props.part1} count={props.count1} />
+      <Part part={props.part2} count={props.count2} />
+      <Part part={props.part3} count={props.count3} />
     </div>
   )
 }
+
 
 const Total = (props) => {
   return (
@@ -36,9 +41,7 @@ const App = () => {
   return (
     <div>
       <Header course={course} />
-      <Content part={part1} count={exercises1} />
-      <Content part={part2} count={exercises2} />
-      <Content part={part3} count={exercises3} />
+      <Content part1={part1} count1={exercises1} part2={part2} count2={exercises2} part3={part3} count3={exercises3} />
       <Total count1={exercises1} count2={exercises2} count3={exercises3} />
     </div>
   )
